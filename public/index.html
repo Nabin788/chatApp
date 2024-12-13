@@ -16,7 +16,21 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         // Initialize a connection to the server using Socket.IO
-        const socket = io();
+        const socket = io({
+            transports: ["websocket"],
+        });
+
+        socket.on("connect", () => {
+            console.log("User connected on client");
+
+            setTimeout(() => {
+                socket.disconnect();
+            }, 2000);
+        });
+
+        socket.on("disconnect", () => {
+            console.log("User disconnect on client");
+        });
     </script>
 </body>
 
