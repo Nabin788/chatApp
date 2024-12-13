@@ -21,7 +21,7 @@
         });
 
         socket.on("connect", () => {
-            console.log("User connected on client");
+            console.log("connected to client");
 
             setTimeout(() => {
                 socket.disconnect();
@@ -29,7 +29,7 @@
         });
 
         socket.on("disconnect", () => {
-            console.log("User disconnect on client");
+            console.log("disconnect from client");
         });
     </script>
 </body>
