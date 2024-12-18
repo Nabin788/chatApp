@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>ChatApp</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="/socket.io/socket.io.js"></script>
@@ -30,5 +31,40 @@
 
 </body>
 <script src="./js/socket.js"></script>
+=======
+    <title>Chat app</title>
+
+</head>
+
+<body>
+    <h1>Chat app</h1>
+
+    <!-- Load the Socket.IO client-side library -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // Initialize a connection to the server using Socket.IO
+        const socket = io({
+            transports: ["websocket"],
+        });
+
+        socket.on("connect", () => {
+            console.log("connected to client");
+
+        });
+
+        //send message to serevr
+        socket.emit("client_message", "Thanks for creating chat app Nabin Poudel");
+
+        // received message from server
+        // socket.on("server message", (server_message) => {
+        //     console.log(server_message);
+        // });
+
+        socket.on("disconnect", () => {
+            console.log("disconnect from client");
+        });
+    </script>
+</body>
+>>>>>>> 252e2ccb67931e73e1167318f6137e4e48e18521
 
 </html>

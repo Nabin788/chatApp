@@ -6,6 +6,10 @@
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> 252e2ccb67931e73e1167318f6137e4e48e18521
   "author": "",
   "license": "ISC",
   "description": "",
