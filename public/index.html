@@ -21,12 +21,16 @@
 
         socket.on("connect", () => {
             console.log("connected to client");
+
         });
 
-        socket.on("server message", (server_message) => {
-            console.log(server_message);
-            
-        })
+        //send message to serevr
+        socket.emit("client_message", "Thanks for creating chat app Nabin Poudel");
+
+        // received message from server
+        // socket.on("server message", (server_message) => {
+        //     console.log(server_message);
+        // });
 
         socket.on("disconnect", () => {
             console.log("disconnect from client");

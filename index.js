@@ -18,8 +18,12 @@ io.on("connection", (socket) => {
     console.log("User connected to server");
 
     // send data from server
-    socket.emit("server message", "Welcome to nabin chat app");
+    // socket.emit("server message", "Welcome to nabin chat app");
 
+    // received data from client
+    socket.on("client_message", (message) => {
+        console.log(message);
+    });
 
     socket.on("disconnect", () => {
         console.log("User disconnected from server");
