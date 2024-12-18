@@ -13,8 +13,13 @@ const port = process.env.PORT || 8000;
 const staticFile = path.join(__dirname, "./public");
 app.use(express.static(staticFile));
 
+
 io.on("connection", (socket) => {
     console.log("User connected to server");
+
+    // send data from server
+    socket.emit("server message", "Welcome to nabin chat app");
+
 
     socket.on("disconnect", () => {
         console.log("User disconnected from server");

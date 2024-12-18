@@ -10,7 +10,6 @@
 
 <body>
     <h1>Chat app</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, voluptas.</p>
 
     <!-- Load the Socket.IO client-side library -->
     <script src="/socket.io/socket.io.js"></script>
@@ -22,11 +21,12 @@
 
         socket.on("connect", () => {
             console.log("connected to client");
-
-            setTimeout(() => {
-                socket.disconnect();
-            }, 2000);
         });
+
+        socket.on("server message", (server_message) => {
+            console.log(server_message);
+            
+        })
 
         socket.on("disconnect", () => {
             console.log("disconnect from client");
